@@ -16,7 +16,7 @@ root.resizable(False,False)#固定大小
 
 
 
-
+  
   
 templateimagepath=""
 templateimage=0
@@ -50,10 +50,10 @@ def preview_hit():
         return
     while(cap.isOpened()):
         s,img=cap.read()# 读取的图像为img
-        
-        image = Image.fromarray(cv2.cvtColor(img,cv2.COLOR_BGR2RGB))
         global srcimage
         srcimage=image
+        image = Image.fromarray(cv2.cvtColor(img,cv2.COLOR_BGR2RGB))
+        
         global tkpreview
         tkpreview=ImageTk.PhotoImage(image=image)
         canvas1.create_image(0,0,anchor='nw',image=tkpreview)
